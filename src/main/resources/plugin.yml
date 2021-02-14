@@ -1,0 +1,4 @@
+name: "ProxyQueryManipulator"
+version: "1.0.0"
+author: "wortie"
+main: "dev.newcrest.network.Loader"
