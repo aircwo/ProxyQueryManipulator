@@ -1,19 +1,19 @@
 package dev.newcrest.network;
 
-import dev.newcrest.network.Loader;
-import dev.waterdog.event.Event;
 import dev.waterdog.event.defaults.ProxyPingEvent;
 import dev.waterdog.event.defaults.ProxyQueryEvent;
 
 public class EventListener {
 
     public static void init(Loader loader) {
-        loader.getProxy().getEventManager().subscribe(ProxyPingEvent.class, EventHandler::onProxyPing);
-        loader.getProxy().getEventManager().subscribe(ProxyQueryEvent.class, EventHandler::onProxyQuery);
+        loader.getProxy().getEventManager().subscribe(ProxyPingEvent.class, EventListener::onProxyPing);
+        loader.getProxy().getEventManager().subscribe(ProxyQueryEvent.class, EventListener::onProxyQuery);
     }
 
     public static void onProxyPing(ProxyPingEvent event) {
-        event.setMaximumPlayerCount(event.getPlayerCount() + 1);
+        int max = Loader.cfg.getInt("max_players_allowed");
+        int value = event.getPlayerCount() >= max ? max : event.getPlayerCount() + 1;
+        event.setMaximumPlayerCount(value);
     }
 
     public static void onProxyQuery(ProxyQueryEvent event) {
