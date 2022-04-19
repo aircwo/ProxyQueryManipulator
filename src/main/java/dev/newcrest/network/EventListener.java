@@ -1,7 +1,7 @@
 package dev.newcrest.network;
 
-import dev.waterdog.event.defaults.ProxyPingEvent;
-import dev.waterdog.event.defaults.ProxyQueryEvent;
+import dev.waterdog.waterdogpe.event.defaults.ProxyPingEvent;
+import dev.waterdog.waterdogpe.event.defaults.ProxyQueryEvent;
 
 public class EventListener {
 
