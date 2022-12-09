@@ -1,7 +1,7 @@
 package dev.newcrest.network;
 
-import dev.waterdog.plugin.Plugin;
-import dev.waterdog.utils.Configuration;
+import dev.waterdog.waterdogpe.plugin.Plugin;
+import dev.waterdog.waterdogpe.utils.Configuration;
 
 public class Loader extends Plugin {
 
